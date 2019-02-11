@@ -15,11 +15,10 @@ class ViewController: UIViewController {
     }
     
     func descriptionSetCard(_ card: SetCard) -> NSAttributedString {
-        // MARK symbols: number & shape
-        //let separator = (verticalSizeClass == .regular) ? "\n" : " "
-        let separator = " "
+        //symbols: number & shape
+        let separator = (UIScreen.main.traitCollection.verticalSizeClass == .regular) ? "\n" : " "
         
-        // MARK attributes: fill & color
+        //attributes: fill & color
         let shadingAttributes: [SetCard.Shading: (alpha: CGFloat, strokeWidth: CGFloat)] = [SetCard.Shading.solid: (1.0, -8), SetCard.Shading.striped: (0.5, -8), SetCard.Shading.open: (0.15, 8)]
         
         let (alpha, strokeWidth) = shadingAttributes[card.shading]!

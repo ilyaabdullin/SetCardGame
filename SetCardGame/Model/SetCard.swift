@@ -14,7 +14,7 @@ struct SetCard: Equatable {
     let shading: Shading
     let color: Filling
     
-    enum Symbol: String, CaseIterable {
+    enum Symbol: String {
         case triangle = "▲"
         case square = "■"
         case circle = "●"
@@ -22,13 +22,13 @@ struct SetCard: Equatable {
         static var all = [Symbol.triangle, .square, .circle]
     }
     
-    enum Number: Int, CaseIterable {
+    enum Number: Int {
         case one = 1, two, three
         
         static var all = [Number.one, .two, .three]
     }
     
-    enum Shading: CaseIterable {
+    enum Shading {
         case solid
         case striped
         case open
@@ -36,7 +36,7 @@ struct SetCard: Equatable {
         static var all = [Shading.solid, .striped, .open]
     }
     
-    enum Filling: Int, CaseIterable {
+    enum Filling: Int {
         case red = 0xFF3B30
         case green = 0x4CD964
         case purple = 0x5856D6
