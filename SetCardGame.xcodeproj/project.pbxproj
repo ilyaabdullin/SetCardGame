@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C5CDF0A221194BD00B97BE5 /* SetCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5CDF09221194BD00B97BE5 /* SetCardDeck.swift */; };
+		2C5CDF0C22119FC400B97BE5 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5CDF0B22119FC400B97BE5 /* SetGame.swift */; };
 		2C7D5A7C220D8E2700D3E293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D5A7B220D8E2700D3E293 /* AppDelegate.swift */; };
 		2C7D5A7E220D8E2700D3E293 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D5A7D220D8E2700D3E293 /* ViewController.swift */; };
 		2C7D5A81220D8E2700D3E293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7D5A7F220D8E2700D3E293 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		2C5CDF09221194BD00B97BE5 /* SetCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardDeck.swift; sourceTree = "<group>"; };
+		2C5CDF0B22119FC400B97BE5 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		2C7D5A78220D8E2700D3E293 /* SetCardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetCardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7D5A7B220D8E2700D3E293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C7D5A7D220D8E2700D3E293 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 			children = (
 				2C7D5A8E220D8F8100D3E293 /* SetCard.swift */,
 				2C5CDF09221194BD00B97BE5 /* SetCardDeck.swift */,
+				2C5CDF0B22119FC400B97BE5 /* SetGame.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				2C7D5A7E220D8E2700D3E293 /* ViewController.swift in Sources */,
 				2C5CDF0A221194BD00B97BE5 /* SetCardDeck.swift in Sources */,
+				2C5CDF0C22119FC400B97BE5 /* SetGame.swift in Sources */,
 				2C7D5A8F220D8F8100D3E293 /* SetCard.swift in Sources */,
 				2C7D5A7C220D8E2700D3E293 /* AppDelegate.swift in Sources */,
 			);
