@@ -14,8 +14,7 @@ class SetGame {
         static let cardsAmountOnStartGame = 12
     }
     
-    private var deck = SetCardDeck()
-    
+    private(set) var deck = SetCardDeck()
     private(set) var cardsOnTable = [SetCard]()
     
     init() {

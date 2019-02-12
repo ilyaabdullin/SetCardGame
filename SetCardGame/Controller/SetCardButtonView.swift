@@ -10,19 +10,37 @@ import UIKit
 
 @IBDesignable class SetCardButtonView: UIButton {
     
-    @IBInspectable var symbol = "▲"
-    @IBInspectable var number = 3
-    @IBInspectable var color = UIColor.purple
-    @IBInspectable var shade = 2
+    @IBInspectable var symbol = ["▲", "■", "●"][Int.random(in: 0...2)]
+    @IBInspectable var number = [1, 2, 3][Int.random(in: 0...2)]
+    @IBInspectable var color = [UIColor.red, UIColor.green, UIColor.purple][Int.random(in: 0...2)]
+    @IBInspectable var shade = [1, 2, 3][Int.random(in: 0...2)]
+    var isStoryboardView = true //this var need for viewing on storyboard
     
+    var card: SetCard? {
+        didSet {
+            isStoryboardView = false
+            
+            if card != nil {
+                symbol = card!.symbol.rawValue
+                number = card!.number.rawValue
+                color = UIColor(rgb: UInt(card!.color.rawValue))
+                shade = card!.shading.rawValue
+            }
+        }
+    }
 
     override func draw(_ rect: CGRect) {
-        let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
-        roundedRect.addClip()
-        UIColor.white.setFill()
-        roundedRect.fill()
-        
-        self.setAttributedTitle(descriptionSetCard(), for: .normal)
+        if card == nil, !isStoryboardView {
+            self.backgroundColor = UIColor.black
+        }
+        else {
+            let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
+            roundedRect.addClip()
+            UIColor.white.setFill()
+            roundedRect.fill()
+            
+            self.setAttributedTitle(descriptionSetCard(), for: .normal)
+        }
     }
     
     func descriptionSetCard() -> NSAttributedString {
@@ -46,7 +64,6 @@ import UIKit
             .foregroundColor: color.withAlphaComponent(alpha),
             .font: font,
             .paragraphStyle: paragraphStyle
-            
         ]
         
         let cardValueString = Array.init(repeating: symbol, count: number).joined(separator: separator)

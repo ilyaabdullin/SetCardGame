@@ -18,26 +18,324 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="os2-mB-pJ1" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="os2-mB-pJ1" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="Bbt-vM-nSM"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="75" id="J5G-jc-Wjw"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="75" id="bT2-h3-usm"/>
-                                </constraints>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle"/>
-                                </state>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lho-1t-SLj">
+                                <rect key="frame" x="20" y="181" width="374" height="544"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Z0I-jU-mow">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="os2-mB-pJ1" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="os2-mB-pJ1" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="Bbt-vM-nSM"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="75" id="J5G-jc-Wjw"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="75" id="bT2-h3-usm"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QFF-O5-1ny" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="100" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iml-nE-5MZ" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RG9-Gh-7HH" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="300" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="QFF-O5-1ny" firstAttribute="width" secondItem="os2-mB-pJ1" secondAttribute="width" id="2J2-m8-ZbF"/>
+                                            <constraint firstItem="Iml-nE-5MZ" firstAttribute="height" secondItem="os2-mB-pJ1" secondAttribute="height" id="2Lg-Y4-oJh"/>
+                                            <constraint firstItem="Iml-nE-5MZ" firstAttribute="width" secondItem="os2-mB-pJ1" secondAttribute="width" id="GnD-QS-KtU"/>
+                                            <constraint firstItem="QFF-O5-1ny" firstAttribute="height" secondItem="os2-mB-pJ1" secondAttribute="height" id="PyU-Wx-vrM"/>
+                                            <constraint firstItem="RG9-Gh-7HH" firstAttribute="height" secondItem="os2-mB-pJ1" secondAttribute="height" id="hiH-FY-fVU"/>
+                                            <constraint firstItem="RG9-Gh-7HH" firstAttribute="width" secondItem="os2-mB-pJ1" secondAttribute="width" id="iQc-lX-0Hf"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="DcX-Xu-CoR">
+                                        <rect key="frame" x="0.0" y="94" width="374" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOe-H8-gzi" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="75" id="mUZ-OK-7xQ"/>
+                                                    <constraint firstAttribute="width" secondItem="iOe-H8-gzi" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="my3-pE-f6n"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="75" id="rQg-vP-LDA"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="6" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jPP-Sx-11u" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="100" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="7" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uk7-6Q-UIe" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="8" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YdR-JB-yLK" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="300" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="jPP-Sx-11u" firstAttribute="height" secondItem="iOe-H8-gzi" secondAttribute="height" id="Gnt-AM-kFn"/>
+                                            <constraint firstItem="Uk7-6Q-UIe" firstAttribute="width" secondItem="iOe-H8-gzi" secondAttribute="width" id="VdL-7V-RaQ"/>
+                                            <constraint firstItem="Uk7-6Q-UIe" firstAttribute="height" secondItem="iOe-H8-gzi" secondAttribute="height" id="W9w-wV-H07"/>
+                                            <constraint firstItem="YdR-JB-yLK" firstAttribute="width" secondItem="iOe-H8-gzi" secondAttribute="width" id="jLr-wb-NKK"/>
+                                            <constraint firstItem="YdR-JB-yLK" firstAttribute="height" secondItem="iOe-H8-gzi" secondAttribute="height" id="mx0-2j-4dc"/>
+                                            <constraint firstItem="jPP-Sx-11u" firstAttribute="width" secondItem="iOe-H8-gzi" secondAttribute="width" id="n9u-1e-p6K"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="RN9-8g-0p3">
+                                        <rect key="frame" x="0.0" y="188" width="374" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="9" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sij-Nd-tDD" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="75" id="E8J-hG-fKb"/>
+                                                    <constraint firstAttribute="width" secondItem="sij-Nd-tDD" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="MJb-ey-UCn"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="75" id="VLO-ql-hNy"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="10" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kf9-Aw-Alc" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="100" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="11" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ooS-WI-W4b" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="12" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fFb-Kl-wTy" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="300" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fFb-Kl-wTy" firstAttribute="width" secondItem="sij-Nd-tDD" secondAttribute="width" id="5dE-IO-RID"/>
+                                            <constraint firstItem="Kf9-Aw-Alc" firstAttribute="width" secondItem="sij-Nd-tDD" secondAttribute="width" id="66g-p4-xI8"/>
+                                            <constraint firstItem="fFb-Kl-wTy" firstAttribute="height" secondItem="sij-Nd-tDD" secondAttribute="height" id="I53-tG-m8j"/>
+                                            <constraint firstItem="ooS-WI-W4b" firstAttribute="width" secondItem="sij-Nd-tDD" secondAttribute="width" id="J5W-eF-Jnd"/>
+                                            <constraint firstItem="Kf9-Aw-Alc" firstAttribute="height" secondItem="sij-Nd-tDD" secondAttribute="height" id="S6K-T1-TaP"/>
+                                            <constraint firstItem="ooS-WI-W4b" firstAttribute="height" secondItem="sij-Nd-tDD" secondAttribute="height" id="u1v-Mk-ugb"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Eb8-cs-j80">
+                                        <rect key="frame" x="0.0" y="282" width="374" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="13" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRg-Bh-4as" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="75" id="3Ut-7p-vRu"/>
+                                                    <constraint firstAttribute="width" secondItem="aRg-Bh-4as" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="GdS-G7-yyO"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="75" id="Lgy-Oo-F7c"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="14" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gY8-8Q-frX" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="100" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="15" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RLn-v8-jBv" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="16" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GnF-16-AIa" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="300" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="RLn-v8-jBv" firstAttribute="width" secondItem="aRg-Bh-4as" secondAttribute="width" id="BaC-fV-5na"/>
+                                            <constraint firstItem="gY8-8Q-frX" firstAttribute="height" secondItem="aRg-Bh-4as" secondAttribute="height" id="EMl-kz-NUb"/>
+                                            <constraint firstItem="gY8-8Q-frX" firstAttribute="width" secondItem="aRg-Bh-4as" secondAttribute="width" id="GXd-vy-D9P"/>
+                                            <constraint firstItem="RLn-v8-jBv" firstAttribute="height" secondItem="aRg-Bh-4as" secondAttribute="height" id="YNu-hK-z4q"/>
+                                            <constraint firstItem="GnF-16-AIa" firstAttribute="height" secondItem="aRg-Bh-4as" secondAttribute="height" id="fk5-Ev-t0h"/>
+                                            <constraint firstItem="GnF-16-AIa" firstAttribute="width" secondItem="aRg-Bh-4as" secondAttribute="width" id="gAU-dP-dpr"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="CzL-c9-q6W">
+                                        <rect key="frame" x="0.0" y="376" width="374" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="17" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0c0-i3-18N" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="75" id="04a-s8-zrt"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="75" id="UxI-7F-EcT"/>
+                                                    <constraint firstAttribute="width" secondItem="0c0-i3-18N" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="scE-lv-Duq"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="18" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ekv-2y-srY" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="100" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="19" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QD1-2g-dVW" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="20" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvg-hA-Me8" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="300" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Ekv-2y-srY" firstAttribute="height" secondItem="0c0-i3-18N" secondAttribute="height" id="0zi-kQ-JUB"/>
+                                            <constraint firstItem="dvg-hA-Me8" firstAttribute="height" secondItem="0c0-i3-18N" secondAttribute="height" id="MX2-E2-iIq"/>
+                                            <constraint firstItem="QD1-2g-dVW" firstAttribute="height" secondItem="0c0-i3-18N" secondAttribute="height" id="WFY-5q-mmN"/>
+                                            <constraint firstItem="dvg-hA-Me8" firstAttribute="width" secondItem="0c0-i3-18N" secondAttribute="width" id="gC5-1k-UoS"/>
+                                            <constraint firstItem="QD1-2g-dVW" firstAttribute="width" secondItem="0c0-i3-18N" secondAttribute="width" id="iZu-fe-Ib0"/>
+                                            <constraint firstItem="Ekv-2y-srY" firstAttribute="width" secondItem="0c0-i3-18N" secondAttribute="width" id="lOh-oD-xVT"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="llW-mg-BGN">
+                                        <rect key="frame" x="0.0" y="470" width="374" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="21" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abI-Uk-AKG" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="abI-Uk-AKG" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="7fy-X0-u2O"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="75" id="bEj-5Y-yyg"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="75" id="rJT-T5-KXv"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="22" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsr-WB-f24" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="100" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="23" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrK-35-xZh" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="24" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asM-ns-CDV" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                                <rect key="frame" x="300" y="0.0" width="74" height="74"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="asM-ns-CDV" firstAttribute="height" secondItem="abI-Uk-AKG" secondAttribute="height" id="EhS-fB-4f1"/>
+                                            <constraint firstItem="Qsr-WB-f24" firstAttribute="width" secondItem="abI-Uk-AKG" secondAttribute="width" id="R2I-Cp-OOV"/>
+                                            <constraint firstItem="wrK-35-xZh" firstAttribute="width" secondItem="abI-Uk-AKG" secondAttribute="width" id="gAy-tp-xee"/>
+                                            <constraint firstItem="wrK-35-xZh" firstAttribute="height" secondItem="abI-Uk-AKG" secondAttribute="height" id="hiW-TW-kyV"/>
+                                            <constraint firstItem="Qsr-WB-f24" firstAttribute="height" secondItem="abI-Uk-AKG" secondAttribute="height" id="tOo-iG-Yq6"/>
+                                            <constraint firstItem="asM-ns-CDV" firstAttribute="width" secondItem="abI-Uk-AKG" secondAttribute="width" id="xKi-I2-ldH"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=compact-widthClass=regular" spacing="20"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="os2-mB-pJ1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OzX-Wc-BDY"/>
-                            <constraint firstItem="os2-mB-pJ1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nYk-VO-GMC"/>
+                            <constraint firstItem="Lho-1t-SLj" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="O1v-8E-F9s"/>
+                            <constraint firstItem="Lho-1t-SLj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VOX-lZ-ysn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lho-1t-SLj" secondAttribute="trailing" constant="20" id="lid-ma-nTr"/>
+                            <constraint firstItem="Lho-1t-SLj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qzQ-35-31M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="cardViews" destination="os2-mB-pJ1" collectionClass="NSMutableArray" id="q8g-X5-Twi"/>
+                        <outletCollection property="cardViews" destination="QFF-O5-1ny" collectionClass="NSMutableArray" id="1jg-hY-yu1"/>
+                        <outletCollection property="cardViews" destination="Iml-nE-5MZ" collectionClass="NSMutableArray" id="J1c-HA-Fs6"/>
+                        <outletCollection property="cardViews" destination="RG9-Gh-7HH" collectionClass="NSMutableArray" id="yl0-tJ-LEM"/>
+                        <outletCollection property="cardViews" destination="iOe-H8-gzi" collectionClass="NSMutableArray" id="jBn-YZ-hBL"/>
+                        <outletCollection property="cardViews" destination="jPP-Sx-11u" collectionClass="NSMutableArray" id="YBy-Pr-cnW"/>
+                        <outletCollection property="cardViews" destination="Uk7-6Q-UIe" collectionClass="NSMutableArray" id="8yR-2t-b38"/>
+                        <outletCollection property="cardViews" destination="YdR-JB-yLK" collectionClass="NSMutableArray" id="UT9-i5-0SE"/>
+                        <outletCollection property="cardViews" destination="sij-Nd-tDD" collectionClass="NSMutableArray" id="dUs-bZ-DLS"/>
+                        <outletCollection property="cardViews" destination="Kf9-Aw-Alc" collectionClass="NSMutableArray" id="yk2-e3-9t1"/>
+                        <outletCollection property="cardViews" destination="ooS-WI-W4b" collectionClass="NSMutableArray" id="ZgQ-MS-cwX"/>
+                        <outletCollection property="cardViews" destination="fFb-Kl-wTy" collectionClass="NSMutableArray" id="r2O-h2-Fzn"/>
+                        <outletCollection property="cardViews" destination="aRg-Bh-4as" collectionClass="NSMutableArray" id="YSV-db-o48"/>
+                        <outletCollection property="cardViews" destination="gY8-8Q-frX" collectionClass="NSMutableArray" id="0oO-su-RaU"/>
+                        <outletCollection property="cardViews" destination="RLn-v8-jBv" collectionClass="NSMutableArray" id="6QP-UG-K1e"/>
+                        <outletCollection property="cardViews" destination="GnF-16-AIa" collectionClass="NSMutableArray" id="xRh-aH-Z0Z"/>
+                        <outletCollection property="cardViews" destination="0c0-i3-18N" collectionClass="NSMutableArray" id="ada-9Q-ORS"/>
+                        <outletCollection property="cardViews" destination="Ekv-2y-srY" collectionClass="NSMutableArray" id="UJV-qG-DA3"/>
+                        <outletCollection property="cardViews" destination="QD1-2g-dVW" collectionClass="NSMutableArray" id="Tvb-D0-GG7"/>
+                        <outletCollection property="cardViews" destination="dvg-hA-Me8" collectionClass="NSMutableArray" id="hdr-Iz-yW0"/>
+                        <outletCollection property="cardViews" destination="abI-Uk-AKG" collectionClass="NSMutableArray" id="7Gj-0g-9YH"/>
+                        <outletCollection property="cardViews" destination="Qsr-WB-f24" collectionClass="NSMutableArray" id="nAT-h9-369"/>
+                        <outletCollection property="cardViews" destination="wrK-35-xZh" collectionClass="NSMutableArray" id="CbX-5e-d1L"/>
+                        <outletCollection property="cardViews" destination="asM-ns-CDV" collectionClass="NSMutableArray" id="GPV-9e-O2m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
