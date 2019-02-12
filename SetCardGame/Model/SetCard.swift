@@ -28,10 +28,8 @@ struct SetCard: Equatable {
         static var all = [Number.one, .two, .three]
     }
     
-    enum Shading {
-        case solid
-        case striped
-        case open
+    enum Shading: Int {
+        case solid = 1, striped, open
         
         static var all = [Shading.solid, .striped, .open]
     }
