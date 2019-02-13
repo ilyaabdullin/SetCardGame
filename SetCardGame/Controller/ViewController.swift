@@ -49,8 +49,8 @@ class ViewController: UIViewController {
     @IBAction func chooseCard(_ chosenCard: SetCardButtonView) {
         //plus3CardButton.isEnabled = !plus3CardButton.isEnabled
         
-        if allChosenCards.count > 2, chosenCard.card?.isChoosing == false {
-            //снимаем выделение
+        
+        if allChosenCards.count > 2, chosenCard.card?.isChoosing == false { //we selected 4th card: clear selected for other 3 cards
             UIViewPropertyAnimator.runningPropertyAnimator(
                 withDuration: 0.6,
                 delay: 0,
@@ -64,13 +64,22 @@ class ViewController: UIViewController {
             })
         }
 
-        UIViewPropertyAnimator.runningPropertyAnimator(
+        UIViewPropertyAnimator.runningPropertyAnimator( //select new card
             withDuration: 0.6,
             delay: 0,
             options: [], animations: {
                 chosenCard.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)
                 chosenCard.card?.isChoosing = true
         })
+        
+        if allChosenCards.count == 3 { // check for set
+            if game.isSet(allChosenCards[0].card!, allChosenCards[1].card!, allChosenCards[2].card!) {
+                print(":) is set!")
+            }
+            else {
+                print("nope :(")
+            }
+        }
     }
     
     @IBAction func add3MoreCard(_ sender: UIButton) {

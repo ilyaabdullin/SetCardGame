@@ -14,7 +14,27 @@ class SetGame {
     
     private(set) var deck = SetCardDeck()
     
-    func getNextCard() -> SetCard? {        
+    func getNextCard() -> SetCard? {
         return deck.draw()
+    }
+    
+    func isSet(_ card1: SetCard, _ card2: SetCard, _ card3: SetCard) -> Bool {
+        let isSymbolSet =
+            (card1.symbol == card2.symbol && card2.symbol == card3.symbol) ||
+            (card1.symbol != card2.symbol && card1.symbol != card3.symbol && card2.symbol != card3.symbol)
+        
+        let isNumberSet =
+            (card1.number == card2.number && card2.number == card3.number) ||
+            (card1.number != card2.number && card1.number != card3.number && card2.number != card3.number)
+        
+        let isShadeSet =
+            (card1.shade == card2.shade && card2.shade == card3.shade) ||
+            (card1.shade != card2.shade && card1.shade != card3.shade && card2.shade != card3.shade)
+        
+        let isColcolor =
+            (card1.color == card2.color && card2.color == card3.color) ||
+            (card1.color != card2.color && card1.color != card3.color && card2.color != card3.color)
+        
+        return isSymbolSet && isNumberSet && isShadeSet && isColcolor
     }
 }
