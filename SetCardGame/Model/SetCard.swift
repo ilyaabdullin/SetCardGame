@@ -11,8 +11,10 @@ import Foundation
 struct SetCard: Equatable {
     let symbol: Symbol
     let number: Number
-    let shading: Shading
+    let shade: Shading
     let color: Filling
+    
+    var isChoosing = false
     
     enum Symbol: String {
         case triangle = "▲"
@@ -40,5 +42,12 @@ struct SetCard: Equatable {
         case purple = 0x5856D6
         
         static var all = [Filling.red, .green, .purple]
+    }
+    
+    init(symbol: SetCard.Symbol, number: SetCard.Number, shade: SetCard.Shading, color: SetCard.Filling) {
+        self.symbol = symbol
+        self.number = number
+        self.shade = shade
+        self.color = color
     }
 }

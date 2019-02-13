@@ -24,9 +24,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Z0I-jU-mow">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="74"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="os2-mB-pJ1" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="os2-mB-pJ1" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="os2-mB-pJ1" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="Bbt-vM-nSM"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="75" id="J5G-jc-Wjw"/>
@@ -35,27 +35,39 @@
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QRP-Yw-1W3"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QFF-O5-1ny" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1WL-3l-Gzx"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iml-nE-5MZ" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="200" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V2W-xG-2RH"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RG9-Gh-7HH" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oYU-u0-iXR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -72,7 +84,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOe-H8-gzi" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="75" id="mUZ-OK-7xQ"/>
                                                     <constraint firstAttribute="width" secondItem="iOe-H8-gzi" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="my3-pE-f6n"/>
@@ -81,27 +93,39 @@
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oBQ-nf-Q0P"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="6" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jPP-Sx-11u" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vwe-AX-nUj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="7" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uk7-6Q-UIe" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="200" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekB-uq-nkV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="8" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YdR-JB-yLK" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c98-t8-Csw"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -118,7 +142,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="9" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sij-Nd-tDD" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="75" id="E8J-hG-fKb"/>
                                                     <constraint firstAttribute="width" secondItem="sij-Nd-tDD" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="MJb-ey-UCn"/>
@@ -127,27 +151,39 @@
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pz7-t7-Sau"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="10" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kf9-Aw-Alc" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5NI-kH-97i"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="11" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ooS-WI-W4b" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="200" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i9Z-Nz-VhW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="12" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fFb-Kl-wTy" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6kQ-zd-T2R"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -164,7 +200,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="13" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRg-Bh-4as" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="75" id="3Ut-7p-vRu"/>
                                                     <constraint firstAttribute="width" secondItem="aRg-Bh-4as" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="GdS-G7-yyO"/>
@@ -173,27 +209,39 @@
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKU-g3-JYQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="14" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gY8-8Q-frX" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LT8-sd-NMX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="15" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RLn-v8-jBv" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="200" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ohw-qY-J0w"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="16" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GnF-16-AIa" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="USa-pL-Mt0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -210,7 +258,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="17" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0c0-i3-18N" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="75" id="04a-s8-zrt"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="75" id="UxI-7F-EcT"/>
@@ -219,27 +267,39 @@
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KEW-cO-rYc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="18" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ekv-2y-srY" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y6D-hd-Exa"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="19" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QD1-2g-dVW" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="200" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3oE-J9-XnT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="20" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvg-hA-Me8" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6wI-Hj-CIh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -256,7 +316,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="21" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abI-Uk-AKG" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="abI-Uk-AKG" secondAttribute="height" multiplier="1:1" identifier="buttonSidesRatio" id="7fy-X0-u2O"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="75" id="bEj-5Y-yyg"/>
@@ -265,27 +325,39 @@
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="awo-Fv-xup"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="22" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsr-WB-f24" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iZ1-0N-hq7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="23" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrK-35-xZh" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="200" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yrY-am-0a7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="24" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asM-ns-CDV" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="0.0" width="74" height="74"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o4J-5R-Q67"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -300,17 +372,43 @@
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=regular" spacing="20"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCG-Jy-qnC">
+                                <rect key="frame" x="294" y="755" width="100" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="+3 card">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="add3MoreCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Efj-gi-ENb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDP-R3-mJ3">
+                                <rect key="frame" x="20" y="755" width="143" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="IDP-R3-mJ3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="84f-cD-YXv"/>
+                            <constraint firstItem="SCG-Jy-qnC" firstAttribute="top" secondItem="Lho-1t-SLj" secondAttribute="bottom" constant="30" id="G9h-vb-8oA"/>
                             <constraint firstItem="Lho-1t-SLj" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="O1v-8E-F9s"/>
                             <constraint firstItem="Lho-1t-SLj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VOX-lZ-ysn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SCG-Jy-qnC" secondAttribute="trailing" constant="20" id="aty-1Z-Tfp"/>
+                            <constraint firstItem="SCG-Jy-qnC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IDP-R3-mJ3" secondAttribute="trailing" constant="8" symbolic="YES" id="d2z-f8-8Px"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lho-1t-SLj" secondAttribute="trailing" constant="20" id="lid-ma-nTr"/>
                             <constraint firstItem="Lho-1t-SLj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qzQ-35-31M"/>
+                            <constraint firstItem="IDP-R3-mJ3" firstAttribute="top" secondItem="Lho-1t-SLj" secondAttribute="bottom" constant="30" id="xpZ-pH-qSr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="plus3CardButton" destination="SCG-Jy-qnC" id="43L-Bc-5k8"/>
                         <outletCollection property="cardViews" destination="os2-mB-pJ1" collectionClass="NSMutableArray" id="q8g-X5-Twi"/>
                         <outletCollection property="cardViews" destination="QFF-O5-1ny" collectionClass="NSMutableArray" id="1jg-hY-yu1"/>
                         <outletCollection property="cardViews" destination="Iml-nE-5MZ" collectionClass="NSMutableArray" id="J1c-HA-Fs6"/>

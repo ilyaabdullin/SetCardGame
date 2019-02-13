@@ -21,25 +21,43 @@ import UIKit
             isStoryboardView = false
             
             if card != nil {
+                self.isEnabled = true
+                
                 symbol = card!.symbol.rawValue
                 number = card!.number.rawValue
                 color = UIColor(rgb: UInt(card!.color.rawValue))
-                shade = card!.shading.rawValue
+                shade = card!.shade.rawValue
             }
+            else {
+                self.isEnabled = false
+            }
+            
+            self.setNeedsDisplay()
         }
     }
 
     override func draw(_ rect: CGRect) {
+        self.layer.cornerRadius = cornerRadius
+        
         if card == nil, !isStoryboardView {
-            self.backgroundColor = UIColor.black
+            self.setTitle("", for: self.state)
         }
         else {
+            
+            if card?.isChoosing == true {
+                self.layer.borderWidth = 4.0; // TODO: send to constant
+                self.layer.borderColor = UIColor.lightGray.cgColor;
+            }
+            else {
+                self.layer.borderWidth = 0.0;
+            }
+            
             let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
             roundedRect.addClip()
             UIColor.white.setFill()
             roundedRect.fill()
             
-            self.setAttributedTitle(descriptionSetCard(), for: .normal)
+            self.setAttributedTitle(descriptionSetCard(), for: self.state)
         }
     }
     
