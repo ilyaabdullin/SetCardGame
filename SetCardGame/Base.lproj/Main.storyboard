@@ -393,7 +393,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IDP-R3-mJ3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="84f-cD-YXv"/>
                             <constraint firstItem="SCG-Jy-qnC" firstAttribute="top" secondItem="Lho-1t-SLj" secondAttribute="bottom" constant="30" id="G9h-vb-8oA"/>

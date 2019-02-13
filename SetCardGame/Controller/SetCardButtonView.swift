@@ -40,7 +40,7 @@ import UIKit
         self.layer.cornerRadius = cornerRadius
         
         if card == nil, !isStoryboardView {
-            self.setTitle("", for: self.state)
+            self.setAttributedTitle(NSAttributedString(string: ""), for: self.state)
         }
         else {
             

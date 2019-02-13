@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         return cardViews.filter{$0.card?.isChoosing == true}
     }
     
+    var allowAdd3MoreCards: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,7 +75,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func add3MoreCard(_ sender: UIButton) {
-        let freeButtonForCard = cardViews.filter{$0.card == nil}
-        freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)].card = nil
+        //let freeButtonForCard = cardViews.filter{$0.card != nil}
+        //freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)].card = nil
+        if sender.isEnabled {
+            for _ in 0..<3 {
+                let freeButtonForCard = cardViews.filter{$0.card == nil}
+                if freeButtonForCard.count > 0 {
+                    let buttonForCard = freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)]
+                    buttonForCard.card = game.getNextCard()
+                }
+                
+            }
+        }
     }
 }
