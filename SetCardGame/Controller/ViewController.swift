@@ -31,12 +31,11 @@ class ViewController: UIViewController {
             button.card = nil
         }
         
-        for card in game.cardsOnTable {
+        for _ in 0..<game.cardsAmountOnStartGame {
             let freeButtonForCard = cardViews.filter{$0.card == nil}
-
             if freeButtonForCard.count > 0 {
                 let buttonForCard = freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)]
-                buttonForCard.card = card
+                buttonForCard.card = game.getNextCard()
             }
         }
         
@@ -84,7 +83,6 @@ class ViewController: UIViewController {
                     let buttonForCard = freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)]
                     buttonForCard.card = game.getNextCard()
                 }
-                
             }
         }
     }
