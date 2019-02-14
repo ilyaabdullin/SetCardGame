@@ -395,23 +395,42 @@
                                     <action selector="runNewGame" destination="BYZ-38-t0r" eventType="touchUpInside" id="NZF-ma-oPH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 sets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGw-gu-T5C">
+                                <rect key="frame" x="20" y="115" width="79" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5o-Fx-cjl">
+                                <rect key="frame" x="375" y="115" width="19" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IDP-R3-mJ3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="84f-cD-YXv"/>
+                            <constraint firstItem="KGw-gu-T5C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Bu9-N7-SE0"/>
+                            <constraint firstItem="w5o-Fx-cjl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KGw-gu-T5C" secondAttribute="trailing" constant="200" id="Di8-H1-d6y"/>
                             <constraint firstItem="SCG-Jy-qnC" firstAttribute="top" secondItem="Lho-1t-SLj" secondAttribute="bottom" constant="30" id="G9h-vb-8oA"/>
                             <constraint firstItem="Lho-1t-SLj" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="O1v-8E-F9s"/>
                             <constraint firstItem="Lho-1t-SLj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VOX-lZ-ysn"/>
+                            <constraint firstItem="Lho-1t-SLj" firstAttribute="top" secondItem="w5o-Fx-cjl" secondAttribute="bottom" constant="30" id="a8S-kB-Kau"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SCG-Jy-qnC" secondAttribute="trailing" constant="20" id="aty-1Z-Tfp"/>
                             <constraint firstItem="SCG-Jy-qnC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IDP-R3-mJ3" secondAttribute="trailing" constant="8" symbolic="YES" id="d2z-f8-8Px"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lho-1t-SLj" secondAttribute="trailing" constant="20" id="lid-ma-nTr"/>
                             <constraint firstItem="Lho-1t-SLj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qzQ-35-31M"/>
+                            <constraint firstItem="Lho-1t-SLj" firstAttribute="top" secondItem="KGw-gu-T5C" secondAttribute="bottom" constant="30" id="rUY-EZ-1Dr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w5o-Fx-cjl" secondAttribute="trailing" constant="20" id="tUC-K6-kbc"/>
                             <constraint firstItem="IDP-R3-mJ3" firstAttribute="top" secondItem="Lho-1t-SLj" secondAttribute="bottom" constant="30" id="xpZ-pH-qSr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="plus3CardButton" destination="SCG-Jy-qnC" id="43L-Bc-5k8"/>
+                        <outlet property="scoreGameLabel" destination="w5o-Fx-cjl" id="YRg-5e-Ks6"/>
+                        <outlet property="setNumberLabel" destination="KGw-gu-T5C" id="pDx-Qi-gTr"/>
                         <outletCollection property="cardViews" destination="os2-mB-pJ1" collectionClass="NSMutableArray" id="q8g-X5-Twi"/>
                         <outletCollection property="cardViews" destination="QFF-O5-1ny" collectionClass="NSMutableArray" id="1jg-hY-yu1"/>
                         <outletCollection property="cardViews" destination="Iml-nE-5MZ" collectionClass="NSMutableArray" id="J1c-HA-Fs6"/>

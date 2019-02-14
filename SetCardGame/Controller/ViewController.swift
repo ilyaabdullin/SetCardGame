@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var plus3CardButton: UIButton!
     
+    @IBOutlet weak var setNumberLabel: UILabel!
+    
+    @IBOutlet weak var scoreGameLabel: UILabel!
+    
     var allChosenCards: [SetCardButtonView] {
         return cardViews.filter{$0.card?.isChoosing == true}
     }
