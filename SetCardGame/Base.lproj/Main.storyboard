@@ -430,7 +430,7 @@
                     <connections>
                         <outlet property="plus3CardButton" destination="SCG-Jy-qnC" id="43L-Bc-5k8"/>
                         <outlet property="scoreGameLabel" destination="w5o-Fx-cjl" id="YRg-5e-Ks6"/>
-                        <outlet property="setNumberLabel" destination="KGw-gu-T5C" id="pDx-Qi-gTr"/>
+                        <outlet property="setsNumberLabel" destination="KGw-gu-T5C" id="pDx-Qi-gTr"/>
                         <outletCollection property="cardViews" destination="os2-mB-pJ1" collectionClass="NSMutableArray" id="q8g-X5-Twi"/>
                         <outletCollection property="cardViews" destination="QFF-O5-1ny" collectionClass="NSMutableArray" id="1jg-hY-yu1"/>
                         <outletCollection property="cardViews" destination="Iml-nE-5MZ" collectionClass="NSMutableArray" id="J1c-HA-Fs6"/>

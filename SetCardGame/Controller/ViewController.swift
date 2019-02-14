@@ -10,13 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var game = SetGame()
+    var game: SetGame?
 
     @IBOutlet var cardViews: [SetCardButtonView]!
     
     @IBOutlet weak var plus3CardButton: UIButton!
     
-    @IBOutlet weak var setNumberLabel: UILabel!
+    @IBOutlet weak var setsNumberLabel: UILabel!
+    
+    var setsNumber: Int = 0 {
+        didSet {
+            setsNumberLabel.text = "\(setsNumber) set" + (setsNumber != 1 ? "s" : "")
+        }
+    }
     
     @IBOutlet weak var scoreGameLabel: UILabel!
     
@@ -24,8 +30,8 @@ class ViewController: UIViewController {
         return cardViews.filter{$0.card?.isChoosing == true}
     }
     
-    var allowAdd3MoreCards: Bool {
-        return true
+    var cardsOnTable: [SetCard] {
+        return cardViews.filter {$0.card != nil} .map { $0.card! }
     }
     
     override func viewDidLoad() {
@@ -48,7 +54,7 @@ class ViewController: UIViewController {
                 if self.allChosenCards.count >= 3 { // check for set
                     let cardsForAnimation = self.allChosenCards
                     
-                    if self.game.isSet(cardsForAnimation[0].card!, cardsForAnimation[1].card!, cardsForAnimation[2].card!) {
+                    if self.game!.isSet(cardsForAnimation[0].card!, cardsForAnimation[1].card!, cardsForAnimation[2].card!) {
                         
                         UIViewPropertyAnimator.runningPropertyAnimator(
                             withDuration: 0.3,
@@ -75,6 +81,8 @@ class ViewController: UIViewController {
                                         cardsForAnimation.forEach {
                                             $0.card = nil
                                         }
+                                        
+                                        self.setsNumber = self.game!.getSetsNumber(cardsForSet: self.cardsOnTable)
                                     }
                                 )
                             }
@@ -92,8 +100,9 @@ class ViewController: UIViewController {
                                 card.transform = .identity
                                 card.card?.isChoosing = false
                             }
+                            
+                            self.setsNumber = self.game!.getSetsNumber(cardsForSet: self.cardsOnTable)
                         })
-                        
                     }
                 }
             }
@@ -101,16 +110,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func add3MoreCard(_ sender: UIButton) {
-        //let freeButtonForCard = cardViews.filter{$0.card != nil}
-        //freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)].card = nil
         if sender.isEnabled {
             for _ in 0..<3 {
-                let freeButtonForCard = cardViews.filter{$0.card == nil}
-                if freeButtonForCard.count > 0 {
-                    let buttonForCard = freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)]
-                    buttonForCard.card = game.getNextCard()
-                }
+                addNextCardToFreeButton()
             }
+            
+            setsNumber = game!.getSetsNumber(cardsForSet: cardsOnTable)
         }
     }
     
@@ -121,12 +126,18 @@ class ViewController: UIViewController {
         
         game = SetGame()
         
-        for _ in 0..<game.cardsAmountOnStartGame {
-            let freeButtonForCard = cardViews.filter{$0.card == nil}
-            if freeButtonForCard.count > 0 {
-                let buttonForCard = freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)]
-                buttonForCard.card = game.getNextCard()
-            }
+        for _ in 0..<game!.cardsAmountOnStartGame {
+            addNextCardToFreeButton()
+        }
+        
+        setsNumber = game!.getSetsNumber(cardsForSet: cardsOnTable)
+    }
+    
+    private func addNextCardToFreeButton() {
+        let freeButtonForCard = cardViews.filter{$0.card == nil}
+        if freeButtonForCard.count > 0 {
+            let buttonForCard = freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)]
+            buttonForCard.card = game!.getNextCard()
         }
     }
 }
