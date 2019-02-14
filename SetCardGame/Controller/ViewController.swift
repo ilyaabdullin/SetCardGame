@@ -47,39 +47,69 @@ class ViewController: UIViewController {
     }
 
     @IBAction func chooseCard(_ chosenCard: SetCardButtonView) {
-        //plus3CardButton.isEnabled = !plus3CardButton.isEnabled
         
-        
-        if allChosenCards.count > 2, chosenCard.card?.isChoosing == false { //we selected 4th card: clear selected for other 3 cards
-            UIViewPropertyAnimator.runningPropertyAnimator(
-                withDuration: 0.6,
-                delay: 0,
-                options: [], animations: {
-                    self.allChosenCards.forEach {
-                        if $0 !== chosenCard {
-                            $0.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
-                            $0.card?.isChoosing = false
-                        }
-                    }
-            })
-        }
-
-        UIViewPropertyAnimator.runningPropertyAnimator( //select new card
-            withDuration: 0.6,
+        UIViewPropertyAnimator.runningPropertyAnimator( //select new card with animation
+            withDuration: 0.3,
             delay: 0,
-            options: [], animations: {
+            options: [],
+            animations: {
                 chosenCard.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)
                 chosenCard.card?.isChoosing = true
-        })
-        
-        if allChosenCards.count == 3 { // check for set
-            if game.isSet(allChosenCards[0].card!, allChosenCards[1].card!, allChosenCards[2].card!) {
-                print(":) is set!")
+            },
+            completion: { position in
+                if self.allChosenCards.count >= 3 { // check for set
+                    let cardsForAnimation = self.allChosenCards
+                    
+                    if self.game.isSet(cardsForAnimation[0].card!, cardsForAnimation[1].card!, cardsForAnimation[2].card!) {
+                        
+                        UIViewPropertyAnimator.runningPropertyAnimator(
+                            withDuration: 0.3,
+                            delay: 0.0,
+                            animations: {
+                                cardsForAnimation.forEach {
+                                    $0.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5)
+                                }
+                            },
+                            completion: { position in
+                                UIViewPropertyAnimator.runningPropertyAnimator(
+                                    withDuration: 0.3,
+                                    delay: 0.0,
+                                    options: [],
+                                    animations: {
+                                        cardsForAnimation.forEach {
+                                            $0.transform = CGAffineTransform.identity.scaledBy(x: 0.1, y: 0.1)
+                                        }
+                                    },
+                                    completion: { position in
+                                        cardsForAnimation.forEach {
+                                            $0.transform = .identity
+                                        }
+                                        cardsForAnimation.forEach {
+                                            $0.card = nil
+                                        }
+                                    }
+                                )
+                            }
+                        )
+                    }
+                    else { // wrong set - turn on shake animation
+                        let cardsForAnimation = self.allChosenCards
+
+                        for card in cardsForAnimation {
+                            card.shake(duration: 0.3)
+                        }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                            for card in cardsForAnimation {
+                                card.transform = .identity
+                                card.card?.isChoosing = false
+                            }
+                        })
+                        
+                    }
+                }
             }
-            else {
-                print("nope :(")
-            }
-        }
+        )
     }
     
     @IBAction func add3MoreCard(_ sender: UIButton) {
@@ -94,5 +124,26 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+}
+
+//shake animation for UIView
+extension UIView {
+    func shake(duration: CFTimeInterval) {
+        let translation = CAKeyframeAnimation(keyPath: "transform.translation.x");
+        translation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        translation.values = [-5, 5, -5, 5, -3, 3, -2, 2, 0]
+        
+        let rotation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+        rotation.values = [-5, 5, -5, 5, -3, 3, -2, 2, 0].map {
+            ( degrees: Double) -> Double in
+            let radians: Double = (.pi * degrees) / 180.0
+            return radians
+        }
+        
+        let shakeGroup: CAAnimationGroup = CAAnimationGroup()
+        shakeGroup.animations = [translation, rotation]
+        shakeGroup.duration = duration
+        self.layer.add(shakeGroup, forKey: "shakeIt")
     }
 }

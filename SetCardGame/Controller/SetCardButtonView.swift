@@ -14,22 +14,17 @@ import UIKit
     @IBInspectable var number = [1, 2, 3][Int.random(in: 0...2)]
     @IBInspectable var color = [UIColor.red, UIColor.green, UIColor.purple][Int.random(in: 0...2)]
     @IBInspectable var shade = [1, 2, 3][Int.random(in: 0...2)]
-    var isStoryboardView = true //this var need for viewing on storyboard
+    var isStoryboardView = true //this var need for viewing card on storyboard
     
     var card: SetCard? {
         didSet {
             isStoryboardView = false
             
             if card != nil {
-                self.isEnabled = true
-                
                 symbol = card!.symbol.rawValue
                 number = card!.number.rawValue
                 color = UIColor(rgb: UInt(card!.color.rawValue))
-                shade = card!.shade.rawValue
-            }
-            else {
-                self.isEnabled = false
+                shade = card!.shade.rawValue   
             }
             
             self.setNeedsDisplay()
@@ -41,8 +36,11 @@ import UIKit
         
         if card == nil, !isStoryboardView {
             self.setAttributedTitle(NSAttributedString(string: ""), for: self.state)
+            self.layer.borderWidth = 0.0; // TODO: send to constant
+            self.layer.borderColor = UIColor.clear.cgColor;
         }
         else {
+            self.setAttributedTitle(descriptionSetCard(), for: self.state)
             
             if card?.isChoosing == true {
                 self.layer.borderWidth = 4.0; // TODO: send to constant
@@ -56,8 +54,6 @@ import UIKit
             roundedRect.addClip()
             UIColor.white.setFill()
             roundedRect.fill()
-            
-            self.setAttributedTitle(descriptionSetCard(), for: self.state)
         }
     }
     
