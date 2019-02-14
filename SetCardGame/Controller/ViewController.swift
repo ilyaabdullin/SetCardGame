@@ -27,23 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for button in cardViews {
-            button.card = nil
-        }
-        
-        for _ in 0..<game.cardsAmountOnStartGame {
-            let freeButtonForCard = cardViews.filter{$0.card == nil}
-            if freeButtonForCard.count > 0 {
-                let buttonForCard = freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)]
-                buttonForCard.card = game.getNextCard()
-            }
-        }
-        
-        //updateViewFromModel()
-    }
-    
-    func updateViewFromModel() {
-
+        runNewGame()
     }
 
     @IBAction func chooseCard(_ chosenCard: SetCardButtonView) {
@@ -122,6 +106,22 @@ class ViewController: UIViewController {
                     let buttonForCard = freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)]
                     buttonForCard.card = game.getNextCard()
                 }
+            }
+        }
+    }
+    
+    @IBAction func runNewGame() {
+        for button in cardViews {
+            button.card = nil
+        }
+        
+        game = SetGame()
+        
+        for _ in 0..<game.cardsAmountOnStartGame {
+            let freeButtonForCard = cardViews.filter{$0.card == nil}
+            if freeButtonForCard.count > 0 {
+                let buttonForCard = freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)]
+                buttonForCard.card = game.getNextCard()
             }
         }
     }
