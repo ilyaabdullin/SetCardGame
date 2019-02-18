@@ -66,6 +66,9 @@ class ViewController: UIViewController {
                     let cardsForAnimation = self.allChosenCards
                     
                     if self.game!.isSet(cardsForAnimation[0].card!, cardsForAnimation[1].card!, cardsForAnimation[2].card!) {
+                        if self.plus3CardButton.isEnabled == false {
+                            self.plus3CardButton.isEnabled = true
+                        }
                         
                         UIViewPropertyAnimator.runningPropertyAnimator(
                             withDuration: 0.3,
@@ -106,7 +109,7 @@ class ViewController: UIViewController {
                             card.shake(duration: 0.3)
                         }
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                             for card in cardsForAnimation {
                                 card.transform = .identity
                                 card.card?.isChoosing = false
@@ -130,6 +133,12 @@ class ViewController: UIViewController {
             
             setsNumber = game!.getSetsNumber(cardsForSet: cardsOnTable)
         }
+        
+        if cardsOnTable.count >= 24 {
+            sender.isEnabled = false
+        }
+        
+        sender.setTitle("+3 card/\(game?.deck.cards.count ?? 0)", for: .normal)
     }
     
     @IBAction func runNewGame() {

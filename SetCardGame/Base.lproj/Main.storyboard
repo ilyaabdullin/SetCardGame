@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,17 +15,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SetCardGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lho-1t-SLj">
-                                <rect key="frame" x="274" y="11.5" width="348" height="370"/>
+                                <rect key="frame" x="40" y="115" width="334" height="676"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Z0I-jU-mow">
-                                        <rect key="frame" x="0.0" y="0.0" width="348" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="96"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="os2-mB-pJ1" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="os2-mB-pJ1" secondAttribute="height" multiplier="2:3" identifier="buttonSidesRatio" id="Bbt-vM-nSM"/>
@@ -50,7 +50,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QFF-O5-1ny" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="93.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="90" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -60,7 +60,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iml-nE-5MZ" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="180" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -70,7 +70,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RG9-Gh-7HH" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="280.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="270" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -90,10 +90,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="DcX-Xu-CoR">
-                                        <rect key="frame" x="0.0" y="65" width="348" height="45"/>
+                                        <rect key="frame" x="0.0" y="116" width="334" height="96"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOe-H8-gzi" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -103,7 +103,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="6" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jPP-Sx-11u" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="93.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="90" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -113,7 +113,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="7" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uk7-6Q-UIe" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="180" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -123,7 +123,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="8" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YdR-JB-yLK" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="280.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="270" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -143,10 +143,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="RN9-8g-0p3">
-                                        <rect key="frame" x="0.0" y="130" width="348" height="45"/>
+                                        <rect key="frame" x="0.0" y="232" width="334" height="96"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="9" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sij-Nd-tDD" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -156,7 +156,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="10" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kf9-Aw-Alc" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="93.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="90" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -166,7 +166,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="11" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ooS-WI-W4b" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="180" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -176,7 +176,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="12" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fFb-Kl-wTy" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="280.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="270" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -196,10 +196,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Eb8-cs-j80">
-                                        <rect key="frame" x="0.0" y="195" width="348" height="45"/>
+                                        <rect key="frame" x="0.0" y="348" width="334" height="96"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="13" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRg-Bh-4as" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -209,7 +209,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="14" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gY8-8Q-frX" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="93.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="90" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -219,7 +219,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="15" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RLn-v8-jBv" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="180" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -229,7 +229,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="16" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GnF-16-AIa" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="280.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="270" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -249,10 +249,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="CzL-c9-q6W">
-                                        <rect key="frame" x="0.0" y="260" width="348" height="45"/>
+                                        <rect key="frame" x="0.0" y="464" width="334" height="96"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="17" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0c0-i3-18N" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -262,7 +262,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="18" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ekv-2y-srY" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="93.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="90" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -272,7 +272,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="19" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QD1-2g-dVW" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="180" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -282,7 +282,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="20" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvg-hA-Me8" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="280.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="270" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -302,10 +302,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="llW-mg-BGN">
-                                        <rect key="frame" x="0.0" y="325" width="348" height="45"/>
+                                        <rect key="frame" x="0.0" y="580" width="334" height="96"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="21" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abI-Uk-AKG" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -315,7 +315,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="22" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsr-WB-f24" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="93.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="90" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -325,7 +325,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="23" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrK-35-xZh" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="180" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -335,7 +335,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="24" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asM-ns-CDV" customClass="SetCardButtonView" customModule="SetCardGame" customModuleProvider="target">
-                                                <rect key="frame" x="280.5" y="0.0" width="67.5" height="45"/>
+                                                <rect key="frame" x="270" y="0.0" width="64" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle"/>
@@ -370,9 +370,9 @@
                                 <variation key="heightClass=compact-widthClass=regular" spacing="20"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCG-Jy-qnC">
-                                <rect key="frame" x="732" y="346" width="100" height="48"/>
+                                <rect key="frame" x="247" y="821" width="147" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="+3 card">
+                                <state key="normal" title="+3 card/69">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <state key="disabled">
@@ -383,7 +383,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDP-R3-mJ3">
-                                <rect key="frame" x="64" y="346" width="143" height="48"/>
+                                <rect key="frame" x="20" y="821" width="143" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="New Game">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -393,13 +393,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 sets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGw-gu-T5C">
-                                <rect key="frame" x="64" y="20" width="79" height="36"/>
+                                <rect key="frame" x="20" y="49" width="79" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5o-Fx-cjl">
-                                <rect key="frame" x="813" y="20" width="19" height="36"/>
+                                <rect key="frame" x="375" y="49" width="19" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
