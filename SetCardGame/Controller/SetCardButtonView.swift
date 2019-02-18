@@ -21,10 +21,14 @@ import UIKit
             isStoryboardView = false
             
             if card != nil {
+                if oldValue == nil {
+                    card!.isChoosing = false
+                }
+                
                 symbol = card!.symbol.rawValue
                 number = card!.number.rawValue
                 color = UIColor(rgb: UInt(card!.color.rawValue))
-                shade = card!.shade.rawValue   
+                shade = card!.shade.rawValue
             }
             
             self.setNeedsDisplay()

@@ -26,6 +26,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var scoreGameLabel: UILabel!
     
+    var scoreGame: Int = 0 {
+        didSet {
+            scoreGameLabel.text = "\(scoreGame)"
+        }
+    }
+    
     var allChosenCards: [SetCardButtonView] {
         return cardViews.filter{$0.card?.isChoosing == true}
     }
@@ -36,19 +42,24 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         runNewGame()
     }
 
     @IBAction func chooseCard(_ chosenCard: SetCardButtonView) {
-        
         UIViewPropertyAnimator.runningPropertyAnimator( //select new card with animation
             withDuration: 0.3,
             delay: 0,
             options: [],
             animations: {
-                chosenCard.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)
-                chosenCard.card?.isChoosing = true
+                
+                chosenCard.card?.isChoosing = !(chosenCard.card?.isChoosing)!
+                if (chosenCard.card?.isChoosing)! {
+                    chosenCard.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)
+                }
+                else {
+                    chosenCard.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
+                }
             },
             completion: { position in
                 if self.allChosenCards.count >= 3 { // check for set
@@ -104,6 +115,8 @@ class ViewController: UIViewController {
                             self.setsNumber = self.game!.getSetsNumber(cardsForSet: self.cardsOnTable)
                         })
                     }
+                    
+                    self.scoreGame = self.game!.score
                 }
             }
         )
@@ -138,6 +151,14 @@ class ViewController: UIViewController {
         if freeButtonForCard.count > 0 {
             let buttonForCard = freeButtonForCard[Int.random(in: 0..<freeButtonForCard.count)]
             buttonForCard.card = game!.getNextCard()
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        for button in cardViews.filter({$0.isHidden == false}) {
+            button.setNeedsDisplay()
         }
     }
 }

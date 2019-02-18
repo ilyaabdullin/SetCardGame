@@ -14,6 +14,8 @@ class SetGame {
     
     private(set) var deck = SetCardDeck()
     
+    private(set) var score = 0
+    
     func getNextCard() -> SetCard? {
         return deck.draw()
     }
@@ -35,7 +37,16 @@ class SetGame {
             (card1.color == card2.color && card2.color == card3.color) ||
             (card1.color != card2.color && card1.color != card3.color && card2.color != card3.color)
         
-        return isSymbolSet && isNumberSet && isShadeSet && isColcolor
+        let isSet = isSymbolSet && isNumberSet && isShadeSet && isColcolor
+        
+        if isSet {
+            score += 3
+        }
+        else {
+            score -= 3
+        }
+        
+        return isSet
     }
     
     private func getThirdCardForSet(card1: SetCard, card2: SetCard) -> SetCard {
