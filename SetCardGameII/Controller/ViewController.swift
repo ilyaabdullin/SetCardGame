@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     var game: SetGame?
 
-    @IBOutlet var cardViews: [SetCardButtonView]!
+    @IBOutlet var cardViews: [SetCardView]!
     
     @IBOutlet weak var plus3CardButton: UIButton!
     
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var allChosenCards: [SetCardButtonView] {
+    var allChosenCards: [SetCardView] {
         return cardViews.filter{$0.card?.isChoosing == true}
     }
     
@@ -43,10 +43,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        runNewGame()
+        //runNewGame()
     }
-
-    @IBAction func chooseCard(_ chosenCard: SetCardButtonView) {
+    
+    @IBAction func touchCard(_ sender: UITapGestureRecognizer) {
+        if let chosenCard = sender.view as? SetCardView {
+            chosenCard.isSelected = !chosenCard.isSelected
+        }
+    }
+    
+    @IBAction func chooseCard(_ chosenCard: SetCardView) {
         UIViewPropertyAnimator.runningPropertyAnimator( //select new card with animation
             withDuration: 0.3,
             delay: 0,
@@ -166,9 +172,9 @@ class ViewController: UIViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
-        for button in cardViews.filter({$0.isHidden == false}) {
-            button.setNeedsDisplay()
-        }
+//        for button in cardViews.filter({$0.isHidden == false}) {
+//            button.setNeedsDisplay()
+//        }
     }
 }
 

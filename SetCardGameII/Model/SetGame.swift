@@ -26,8 +26,8 @@ class SetGame {
             (card1.symbol != card2.symbol && card1.symbol != card3.symbol && card2.symbol != card3.symbol)
         
         let isNumberSet =
-            (card1.number == card2.number && card2.number == card3.number) ||
-            (card1.number != card2.number && card1.number != card3.number && card2.number != card3.number)
+            (card1.count == card2.count && card2.count == card3.count) ||
+            (card1.count != card2.count && card1.count != card3.count && card2.count != card3.count)
         
         let isShadeSet =
             (card1.shade == card2.shade && card2.shade == card3.shade) ||
@@ -51,24 +51,19 @@ class SetGame {
     
     private func getThirdCardForSet(card1: SetCard, card2: SetCard) -> SetCard {
         func getSymbol(_ symbol1: SetCard.Symbol, _ symbol2: SetCard.Symbol) -> SetCard.Symbol {
-            switch (symbol1, symbol2) {
-            case (.circle, .triangle), (.triangle, .circle):
-                return .square
-            case (.circle, .square), (.square, .circle):
-                return .triangle
-            case (.triangle, .square), (.square, .triangle):
-                return .circle
-            default:
+            if symbol1 == symbol2 {
                 return symbol1
             }
+            
+            return SetCard.Symbol(rawValue: (SetCard.Symbol.diamond.rawValue + SetCard.Symbol.oval.rawValue + SetCard.Symbol.squiggle.rawValue) - symbol1.rawValue - symbol2.rawValue)!
         }
         
-        func getNumber(_ number1: SetCard.Number, _ number2: SetCard.Number) -> SetCard.Number {
+        func getNumber(_ number1: SetCard.Count, _ number2: SetCard.Count) -> SetCard.Count {
             if number1 == number2 {
                 return number1
             }
             
-            return SetCard.Number(rawValue: (SetCard.Number.one.rawValue + SetCard.Number.two.rawValue + SetCard.Number.three.rawValue) - number1.rawValue - number2.rawValue)!
+            return SetCard.Count(rawValue: (SetCard.Count.one.rawValue + SetCard.Count.two.rawValue + SetCard.Count.three.rawValue) - number1.rawValue - number2.rawValue)!
         }
         
         func getShade(_ shade1: SetCard.Shading, _ shade2: SetCard.Shading) -> SetCard.Shading {
@@ -88,7 +83,7 @@ class SetGame {
         }
         
         let symbol = getSymbol(card1.symbol, card2.symbol)
-        let number = getNumber(card1.number, card2.number)
+        let number = getNumber(card1.count, card2.count)
         let shade = getShade(card1.shade, card2.shade)
         let color = getColor(card1.color, card2.color)
         
