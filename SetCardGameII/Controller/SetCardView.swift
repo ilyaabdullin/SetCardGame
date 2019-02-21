@@ -12,9 +12,7 @@ import UIKit
     
     @IBInspectable var cardColor: UIColor = UIColor.white { didSet {setNeedsDisplay()} }
     
-    @IBInspectable var isSelected: Bool = true { didSet {setNeedsDisplay()} }
-    
-    private var isMatched: Bool = false { didSet {setNeedsDisplay()} }
+    @IBInspectable var isSelected: Bool = false { didSet {setNeedsDisplay()} }
     
     @IBInspectable var symbolInt: Int = [1, 2, 3][Int.random(in: 0...2)] {
         didSet {
@@ -228,7 +226,7 @@ extension SetCardView {
         let (widthRectangleForShape, heightRectangleForShape) = rectangleShapeSize
         let totalHeight = heightRectangleForShape * CGFloat(count.rawValue) + padding.height * CGFloat(count.rawValue - 1)
         let verticalPadding = (bounds.size.height - totalHeight) / 2
-        let diagonalRectLength = min(widthRectangleForShape, heightRectangleForShape) * 2
+        let diagonalRectLength = min(min(widthRectangleForShape, heightRectangleForShape) * 2, widthRectangleForShape)
         
         var rectanglesForShapes = [CGRect]()
         for nextShapeNumber in 1...count.rawValue {

@@ -17,6 +17,7 @@
 		2C7D5A86220D8E2900D3E293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7D5A84220D8E2900D3E293 /* LaunchScreen.storyboard */; };
 		2C7D5A8F220D8F8100D3E293 /* SetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D5A8E220D8F8100D3E293 /* SetCard.swift */; };
 		2CC20454221E7DC700B1953E /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC20453221E7DC700B1953E /* Grid.swift */; };
+		2CC20456221E806E00B1953E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC20455221E806E00B1953E /* GridView.swift */; };
 		2CF20E14221C3EE900E27DFB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF20E13221C3EE900E27DFB /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		2C7D5A87220D8E2900D3E293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C7D5A8E220D8F8100D3E293 /* SetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCard.swift; sourceTree = "<group>"; };
 		2CC20453221E7DC700B1953E /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		2CC20455221E806E00B1953E /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		2CF20E13221C3EE900E27DFB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				2CC20453221E7DC700B1953E /* Grid.swift */,
 				2C7D5A7D220D8E2700D3E293 /* ViewController.swift */,
 				2C5CDF0E2211A7ED00B97BE5 /* SetCardView.swift */,
+				2CC20455221E806E00B1953E /* GridView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				2C7D5A7E220D8E2700D3E293 /* ViewController.swift in Sources */,
 				2C5CDF0A221194BD00B97BE5 /* SetCardDeck.swift in Sources */,
 				2C5CDF0C22119FC400B97BE5 /* SetGame.swift in Sources */,
+				2CC20456221E806E00B1953E /* GridView.swift in Sources */,
 				2C7D5A8F220D8F8100D3E293 /* SetCard.swift in Sources */,
 				2CC20454221E7DC700B1953E /* Grid.swift in Sources */,
 				2C7D5A7C220D8E2700D3E293 /* AppDelegate.swift in Sources */,
