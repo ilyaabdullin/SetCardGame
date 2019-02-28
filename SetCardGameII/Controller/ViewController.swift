@@ -170,19 +170,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func add3MoreCard(_ sender: UIButton) {
-//        if sender.isEnabled {
-//            for _ in 0..<3 {
-//                addNextCardToFreeButton()
-//            }
-//
-//            setsNumber = game!.getSetsNumber(cardsForSet: cardsOnTable)
-//        }
-//
-//        if cardsOnTable.count >= 24 {
-//            sender.isEnabled = false
-//        }
-//
-//        sender.setTitle("+3 card/\(game?.deck.cards.count ?? 0)", for: .normal)
+        if game!.deck.cards.count > 0 {
+            for _ in 1...3 {
+                addNextCardToGrid()
+            }
+        }
+        
+        if (game?.deck.cards.count)! == 0 {
+            plus3CardButton.isEnabled = false
+        }
+        
+        plus3CardButton.setTitle("+3 card/\(game?.deck.cards.count ?? 0)", for: .normal)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -205,10 +203,14 @@ extension ViewController {
     
     @IBAction func runNewGame() {
         game = SetGame()
+        gridView.cardViews = [SetCardView]()
+        plus3CardButton.isEnabled = true
         
         for _ in 0..<game!.cardsAmountOnStartGame {
             addNextCardToGrid()
         }
+        
+        plus3CardButton.setTitle("+3 card/\(game?.deck.cards.count ?? 0)", for: .normal)
         
         //setsNumber = game!.getSetsNumber(cardsForSet: gridView!.cardViews.map{$0.card?})
     }
@@ -230,11 +232,7 @@ extension ViewController {
     }
     
     @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
-        if game!.deck.cards.count > 0 {
-            for _ in 1...3 {
-                addNextCardToGrid()
-            }
-        }
+        add3MoreCard(plus3CardButton)
     }
 }
 
