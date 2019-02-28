@@ -13,10 +13,10 @@ struct SetCardDeck {
     
     init() {
         for symbol in SetCard.Symbol.allCases {
-            for number in SetCard.Count.allCases {
+            for count in SetCard.Count.allCases {
                 for shade in SetCard.Shading.allCases {
                     for color in SetCard.Filling.allCases {
-                        cards.append(SetCard.init(symbol: symbol, number: number, shade: shade, color: color))
+                        cards.append(SetCard.init(symbol: symbol, count: count, shade: shade, color: color))
                     }
                 }
             }

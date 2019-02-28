@@ -58,12 +58,12 @@ class SetGame {
             return SetCard.Symbol(rawValue: (SetCard.Symbol.diamond.rawValue + SetCard.Symbol.oval.rawValue + SetCard.Symbol.squiggle.rawValue) - symbol1.rawValue - symbol2.rawValue)!
         }
         
-        func getNumber(_ number1: SetCard.Count, _ number2: SetCard.Count) -> SetCard.Count {
-            if number1 == number2 {
-                return number1
+        func getCount(_ count1: SetCard.Count, _ count2: SetCard.Count) -> SetCard.Count {
+            if count1 == count2 {
+                return count1
             }
             
-            return SetCard.Count(rawValue: (SetCard.Count.one.rawValue + SetCard.Count.two.rawValue + SetCard.Count.three.rawValue) - number1.rawValue - number2.rawValue)!
+            return SetCard.Count(rawValue: (SetCard.Count.one.rawValue + SetCard.Count.two.rawValue + SetCard.Count.three.rawValue) - count1.rawValue - count2.rawValue)!
         }
         
         func getShade(_ shade1: SetCard.Shading, _ shade2: SetCard.Shading) -> SetCard.Shading {
@@ -83,17 +83,17 @@ class SetGame {
         }
         
         let symbol = getSymbol(card1.symbol, card2.symbol)
-        let number = getNumber(card1.count, card2.count)
+        let count = getCount(card1.count, card2.count)
         let shade = getShade(card1.shade, card2.shade)
         let color = getColor(card1.color, card2.color)
         
-        return SetCard(symbol: symbol, number: number, shade: shade, color: color)
+        return SetCard.init(symbol: symbol, count: count, shade: shade, color: color)
     }
     
-    func getSetsNumber(cardsForSet: [SetCard]) -> Int {
+    func getSetsNumber(cardsForSet: [SetCard]?) -> Int {
         var setsNumber = 0
         
-        var cards = cardsForSet
+        var cards = cardsForSet ?? [SetCard]()
         while cards.count > 0 {
             let card1 = cards.remove(at: 0)
             for card2 in cards {
