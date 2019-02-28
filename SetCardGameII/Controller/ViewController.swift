@@ -40,6 +40,72 @@ class ViewController: UIViewController {
         return gridView.cardViews.map { $0.card! }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        runNewGame()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        for card in gridView.cardViews.filter({$0.card != nil}) {
+            card.setNeedsDisplay()
+        }
+    }
+}
+
+//gameplay
+extension ViewController {
+
+    @IBAction func runNewGame() {
+        game = SetGame()
+        gridView.cardViews = [SetCardView]()
+        plus3CardButton.isEnabled = true
+        
+        for _ in 0..<game!.cardsAmountOnStartGame {
+            addNextCardToGrid()
+        }
+        
+        plus3CardButton.setTitle("+3 card/\(game?.deck.cards.count ?? 0)", for: .normal)
+        
+        setsNumber = game!.getSetsNumber(cardsForSet: gridView!.cardViews.map({ $0.card! }))
+    }
+
+    private func addNextCardToGrid() {
+        let cardView = SetCardView()
+        cardView.card = game!.getNextCard()
+        addTapGestureRecognizer(for: cardView)
+        gridView.cardViews.append(cardView)
+    }
+    
+    private func addTapGestureRecognizer(for cardView: SetCardView) {
+        let tap = UITapGestureRecognizer(
+            target: self,
+            action: #selector(touchCard(recognizedBy: )))
+        tap.numberOfTapsRequired = 1
+        tap.numberOfTouchesRequired = 1
+        cardView.addGestureRecognizer(tap)
+    }
+    
+    @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
+        add3MoreCard(plus3CardButton)
+    }
+    
+    @IBAction func add3MoreCard(_ sender: UIButton) {
+        if game!.deck.cards.count > 0 {
+            for _ in 1...3 {
+                addNextCardToGrid()
+            }
+        }
+        
+        if (game?.deck.cards.count)! == 0 {
+            plus3CardButton.isEnabled = false
+        }
+        
+        plus3CardButton.setTitle("+3 card/\(game?.deck.cards.count ?? 0)", for: .normal)
+        setsNumber = game!.getSetsNumber(cardsForSet: gridView!.cardViews.map({ $0.card! }))
+    }
+    
     @objc private func touchCard(recognizedBy sender: UITapGestureRecognizer) {
         if let chosenCard = sender.view as? SetCardView {
             UIViewPropertyAnimator.runningPropertyAnimator( //select new card with animation
@@ -74,6 +140,7 @@ class ViewController: UIViewController {
                                         self.gridView.cardViews.remove(at: self.gridView.cardViews.firstIndex(of: $0)!)
                                         $0.card = nil
                                     }
+                                    self.setsNumber = self.game!.getSetsNumber(cardsForSet: self.gridView!.cardViews.map({ $0.card! }))
                                 }
                             )
                         }
@@ -83,156 +150,12 @@ class ViewController: UIViewController {
                                 card.isSelected = false
                             }
                         }
+                        
+                        self.scoreGame = self.game!.score
                     }
                 }
             )
         }
-    }
-    
-    @IBAction func chooseCard(_ chosenCard: SetCardView) {
-        UIViewPropertyAnimator.runningPropertyAnimator( //select new card with animation
-            withDuration: 0.3,
-            delay: 0,
-            options: [],
-            animations: {
- 
-                chosenCard.isSelected = !chosenCard.isSelected
-                
-                if chosenCard.isSelected {
-                    chosenCard.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
-                }
-                else {
-                    chosenCard.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)
-                }
-            },
-            completion: { position in
-                if self.allChosenCards.count >= 3 { // check for set
-                    let cardsForAnimation = self.allChosenCards
-
-                    if self.game!.isSet(cardsForAnimation[0].card!, cardsForAnimation[1].card!, cardsForAnimation[2].card!) {
-                        if self.plus3CardButton.isEnabled == false {
-                            self.plus3CardButton.isEnabled = true
-                        }
-
-                        UIViewPropertyAnimator.runningPropertyAnimator(
-                            withDuration: 0.3,
-                            delay: 0.0,
-                            animations: {
-                                cardsForAnimation.forEach {
-                                    $0.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5)
-                                }
-                            },
-                            completion: { position in
-                                UIViewPropertyAnimator.runningPropertyAnimator(
-                                    withDuration: 0.3,
-                                    delay: 0.0,
-                                    options: [],
-                                    animations: {
-                                        cardsForAnimation.forEach {
-                                            $0.transform = CGAffineTransform.identity.scaledBy(x: 0.1, y: 0.1)
-                                        }
-                                    },
-                                    completion: { position in
-                                        cardsForAnimation.forEach {
-                                            $0.transform = .identity
-                                        }
-                                        cardsForAnimation.forEach {
-                                            $0.card = nil
-                                        }
-
-                                        self.setsNumber = self.game!.getSetsNumber(cardsForSet: self.cardsOnTable)
-                                    }
-                                )
-                            }
-                        )
-                    }
-                    else { // wrong set - turn on shake animation
-                        let cardsForAnimation = self.allChosenCards
-
-                        for card in cardsForAnimation {
-                            card.shake(duration: 0.3)
-                        }
-
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
-                            for card in cardsForAnimation {
-                                card.transform = .identity
-                                card.isSelected = false
-                            }
-
-                            self.setsNumber = self.game!.getSetsNumber(cardsForSet: self.cardsOnTable)
-                        })
-                    }
-
-                    self.scoreGame = self.game!.score
-                }
-            }
-        )
-    }
-    
-    @IBAction func add3MoreCard(_ sender: UIButton) {
-        if game!.deck.cards.count > 0 {
-            for _ in 1...3 {
-                addNextCardToGrid()
-            }
-        }
-        
-        if (game?.deck.cards.count)! == 0 {
-            plus3CardButton.isEnabled = false
-        }
-        
-        plus3CardButton.setTitle("+3 card/\(game?.deck.cards.count ?? 0)", for: .normal)
-    }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        
-        for card in gridView.cardViews.filter({$0.card != nil}) {
-            card.setNeedsDisplay()
-        }
-    }
-    
-}
-
-//drawing cards logic
-extension ViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        runNewGame()
-    }
-    
-    @IBAction func runNewGame() {
-        game = SetGame()
-        gridView.cardViews = [SetCardView]()
-        plus3CardButton.isEnabled = true
-        
-        for _ in 0..<game!.cardsAmountOnStartGame {
-            addNextCardToGrid()
-        }
-        
-        plus3CardButton.setTitle("+3 card/\(game?.deck.cards.count ?? 0)", for: .normal)
-        
-        //setsNumber = game!.getSetsNumber(cardsForSet: gridView!.cardViews.map{$0.card?})
-    }
-
-    private func addNextCardToGrid() {
-        let cardView = SetCardView()
-        cardView.card = game!.getNextCard()
-        addTapGestureRecognizer(for: cardView)
-        gridView.cardViews.append(cardView)
-    }
-    
-    private func addTapGestureRecognizer(for cardView: SetCardView) {
-        let tap = UITapGestureRecognizer(
-            target: self,
-            action: #selector(touchCard(recognizedBy: )))
-        tap.numberOfTapsRequired = 1
-        tap.numberOfTouchesRequired = 1
-        cardView.addGestureRecognizer(tap)
-    }
-    
-    @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
-        add3MoreCard(plus3CardButton)
     }
 }
 
