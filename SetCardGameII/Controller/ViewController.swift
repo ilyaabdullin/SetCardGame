@@ -48,20 +48,45 @@ class ViewController: UIViewController {
                 options: [],
                 animations: {
                     chosenCard.isSelected = !chosenCard.isSelected
+                    
                     if chosenCard.isSelected {
                         chosenCard.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)
                     }
                     else {
                         chosenCard.transform = CGAffineTransform.identity
                     }
-            },
-                completion: nil
+                },
+                completion: { position in
+                    if self.allChosenCards.count >= 3 { // check for set
+                        let cardsForAnimation = self.allChosenCards
+                        
+                        if self.game!.isSet(cardsForAnimation[0].card!, cardsForAnimation[1].card!, cardsForAnimation[2].card!) {
+                            UIViewPropertyAnimator.runningPropertyAnimator(
+                                withDuration: 0.3,
+                                delay: 0.0,
+                                animations: {
+                                    cardsForAnimation.forEach {
+                                        $0.transform = CGAffineTransform.identity.scaledBy(x: 0.1, y: 0.1)
+                                    }
+                                },
+                                completion: { position in
+                                    cardsForAnimation.forEach {
+                                        self.gridView.cardViews.remove(at: self.gridView.cardViews.firstIndex(of: $0)!)
+                                        $0.card = nil
+                                    }
+                                }
+                            )
+                        }
+                        else {
+                            for card in cardsForAnimation {
+                                card.shake(duration: 0.3)
+                                card.isSelected = false
+                            }
+                        }
+                    }
+                }
             )
-            
         }
-        
-        
-        
     }
     
     @IBAction func chooseCard(_ chosenCard: SetCardView) {
@@ -70,8 +95,9 @@ class ViewController: UIViewController {
             delay: 0,
             options: [],
             animations: {
-
+ 
                 chosenCard.isSelected = !chosenCard.isSelected
+                
                 if chosenCard.isSelected {
                     chosenCard.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
                 }

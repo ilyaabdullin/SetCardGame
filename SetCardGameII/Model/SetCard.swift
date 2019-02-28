@@ -14,6 +14,8 @@ struct SetCard: Equatable {
     let shade: Shading
     let color: Filling
     
+    //let isSelected = false
+    
     enum Symbol: Int, CaseIterable {
         case diamond = 1, oval, squiggle
     }
@@ -32,9 +34,9 @@ struct SetCard: Equatable {
         case purple = 0x5856D6
     }
     
-//    init(symbol: SetCard.Symbol, number: SetCard.Count, shade: SetCard.Shading, color: SetCard.Filling) {
+//    init(symbol: SetCard.Symbol, count: SetCard.Count, shade: SetCard.Shading, color: SetCard.Filling) {
 //        self.symbol = symbol
-//        self.count = number
+//        self.count = count
 //        self.shade = shade
 //        self.color = color
 //    }

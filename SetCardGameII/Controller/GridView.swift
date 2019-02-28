@@ -11,8 +11,13 @@ import UIKit
 class GridView: UIView {
     
     var cardViews = [SetCardView]() {
-        willSet { removeSubviews() }
-        didSet { addSubviews(); setNeedsLayout() }
+        willSet {
+            self.removeSubviews()
+        }
+        
+        didSet {
+            self.addSubviews()
+        }
     }
     
     private func removeSubviews() {
@@ -36,11 +41,13 @@ class GridView: UIView {
         
         grid.cellCount = cardViews.count
         
-        for row in 0..<grid.dimensions.rowCount {
-            for column in 0..<grid.dimensions.columnCount {
-                if cardViews.count > (row * grid.dimensions.columnCount + column) {
-                    cardViews[row * grid.dimensions.columnCount + column].frame = grid[row,column]!.insetBy(
-                        dx: spacingDx, dy: spacingDy)
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            for row in 0..<grid.dimensions.rowCount {
+                for column in 0..<grid.dimensions.columnCount {
+                    if self!.cardViews.count > (row * grid.dimensions.columnCount + column) {
+                        self!.cardViews[row * grid.dimensions.columnCount + column].frame = grid[row,column]!.insetBy(
+                            dx: self!.spacingDx, dy: self!.spacingDy)
+                    }
                 }
             }
         }
